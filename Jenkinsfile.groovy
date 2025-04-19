@@ -17,10 +17,13 @@
     }
 }*/
 pipeline {
-    agent { dockerfile  true }
+    agent { label 'ec2_instance' }
 
     stages {
         stage('Build') {
+            agent {
+                dockerfile { filename 'Dockerfile' }
+            }
             steps {
                 echo 'Building..'
             }
