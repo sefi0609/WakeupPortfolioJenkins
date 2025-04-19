@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent { label 'ec2_instance' }
 
     stages {
@@ -12,6 +12,17 @@ pipeline {
             steps {
                 echo 'Running....'
                 sh ('sudo docker run wakeup-portfolio')
+            }
+        }
+    }
+}*/
+pipeline {
+    agent { dockerfile  true }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
     }
