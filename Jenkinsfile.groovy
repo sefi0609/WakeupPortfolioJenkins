@@ -5,17 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh ('sudo docker version')
+                sh ('sudo docker build -t wakeup-portfolio .')
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo 'Running....'
+                sh ('sudo docker run wakeup-portfolio')
             }
         }
     }
