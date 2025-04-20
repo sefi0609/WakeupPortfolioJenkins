@@ -17,7 +17,7 @@
     }
 }*/
 pipeline {
-    agent { label 'ec2_instance' }
+    agent { label 'linux_agents' }
 
     stages {
         stage('Build') {
