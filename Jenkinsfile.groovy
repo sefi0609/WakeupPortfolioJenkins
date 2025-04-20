@@ -22,7 +22,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                dockerfile { filename 'Dockerfile' }
+                docker { image 'alpine:latest' }
             }
             steps {
                 echo 'Building..'
