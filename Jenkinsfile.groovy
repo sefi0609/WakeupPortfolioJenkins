@@ -5,13 +5,13 @@
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh ('sudo docker build -t wakeup-portfolio .')
+                sh 'sudo docker build -t wakeup-portfolio .'
             }
         }
         stage('Run') {
             steps {
                 echo 'Running....'
-                sh ('sudo docker run wakeup-portfolio')
+                sh 'sudo docker run wakeup-portfolio'
             }
         }
     }
@@ -21,9 +21,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                docker { image 'alpine:latest' }
-            }
+            agent { dockerfile true }
             steps {
                 echo 'Building..'
             }
