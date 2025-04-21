@@ -24,6 +24,7 @@ pipeline {
             agent { dockerfile true }
             steps {
                 echo 'Building..'
+                sh 'whoami'
             }
         }
     }
