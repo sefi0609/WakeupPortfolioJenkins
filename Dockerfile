@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     xvfb \
     python3
 
-RUN python -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip
 RUN pip install --no-cache-dir selenium
 
 WORKDIR /app
