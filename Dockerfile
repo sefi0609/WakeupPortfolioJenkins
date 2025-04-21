@@ -8,8 +8,8 @@ RUN apk add --no-cache \
     xvfb \
     python3
 
-RUN python3 -m pip install --upgrade pip
-RUN pip install --no-cache-dir selenium
+RUN python3 -m pip3 install --upgrade pip3
+RUN pip3 install --no-cache-dir selenium
 
 WORKDIR /app
 COPY wakeup_portfolio.py ./wakeup_portfolio.py
