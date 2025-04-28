@@ -29,12 +29,12 @@ pipeline {
         }
         stage('Pull image') {
             steps {
-                sh 'docker pull 123456789012.dkr.ecr.us-east-1.amazonaws.com/automations:latest'
+                sh 'docker pull 340752809566.dkr.ecr.us-east-1.amazonaws.com/automations:latest'
             }
         }
         stage('Run') {
             steps {
-                sh 'docker run -rm 123456789012.dkr.ecr.us-east-1.amazonaws.com/automations:latest'
+                sh 'docker run -rm 340752809566.dkr.ecr.us-east-1.amazonaws.com/automations:latest'
             }
         }
     }
