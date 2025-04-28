@@ -17,9 +17,12 @@
     }
 }*/
 pipeline {
-    agent { label 'linux_agents' }
-    environment { AWS_ECR = '340752809566.dkr.ecr.us-east-1.amazonaws.com' }
-
+    agent {
+        label 'linux_agents'
+    }
+    environment {
+        AWS_ECR = '340752809566.dkr.ecr.us-east-1.amazonaws.com'
+    }
     stages {
         stage('Get credentials') {
             steps {
