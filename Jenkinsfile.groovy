@@ -32,12 +32,12 @@ pipeline {
                 }
             }
         }
-        stage('Pull image') {
+        stage('Pull Image') {
             steps {
                 sh 'docker pull $ECR_REGISTRY/$IMAGE_NAME'
             }
         }
-        stage('Run') {
+        stage('Run Docker Image') {
             steps {
                 sh 'docker run --rm $ECR_REGISTRY/$IMAGE_NAME'
             }
