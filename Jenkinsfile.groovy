@@ -23,7 +23,7 @@ pipeline {
         stage('Build') {
             agent { dockerfile true }
             steps {
-                sh 'sudo python wakeup_portfolio.py --url https://protfolio-yosefi-kroytoro.streamlit.app/'
+                sh 'python wakeup_portfolio.py --url https://protfolio-yosefi-kroytoro.streamlit.app/'
             }
         }
     }

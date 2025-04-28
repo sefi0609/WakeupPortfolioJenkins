@@ -5,7 +5,8 @@ RUN apk update
 RUN apk add --no-cache \
     chromium \
     chromium-chromedriver \
-    xvfb
+    xvfb \
+    sudo
 
 RUN python -m pip install --upgrade pip
 RUN pip install --no-cache-dir selenium
