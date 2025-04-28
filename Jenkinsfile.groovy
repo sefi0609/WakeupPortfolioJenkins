@@ -30,12 +30,12 @@ pipeline {
         }
         stage('Pull image') {
             steps {
-                sh 'docker pull $AWS_ECR'
+                sh 'docker pull $AWS_ECR/automations:latest'
             }
         }
         stage('Run') {
             steps {
-                sh 'docker run -rm $AWS_ECR'
+                sh 'docker run -rm $AWS_ECR/automations:latest'
             }
         }
     }
