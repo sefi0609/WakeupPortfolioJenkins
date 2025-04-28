@@ -20,20 +20,11 @@ pipeline {
     agent { label 'linux_agents' }
 
     stages {
-        stage('Configure AWS credentials') {
-            steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
-                                  credentialsId: 'aws_credentials',
-                                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-                    echo env.AWS_ACCESS_KEY_ID
-                    echo env.AWS_SECRET_ACCESS_KEY
-                }
-            }
-        }
         stage('Get credentials') {
             steps {
-                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 340752809566.dkr.ecr.us-east-1.amazonaws.com'
+                withCredentials([aws(credentialsId: "aws_credentials")]){
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 340752809566.dkr.ecr.us-east-1.amazonaws.com'
+                }
             }
         }
         stage('Pull image') {
