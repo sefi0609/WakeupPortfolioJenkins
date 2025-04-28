@@ -26,8 +26,8 @@ pipeline {
                                   credentialsId: 'aws_credentials',
                                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-                    echo '$AWS_ACCESS_KEY_ID'
-                    echo '$AWS_SECRET_ACCESS_KEY'
+                    echo env.AWS_ACCESS_KEY_ID
+                    echo env.AWS_SECRET_ACCESS_KEY
                 }
             }
         }
