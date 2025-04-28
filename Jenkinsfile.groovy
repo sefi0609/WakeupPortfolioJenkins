@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'docker run -rm $AWS_ECR/automations:latest'
+                sh 'docker run --rm $AWS_ECR/automations:latest'
             }
         }
     }
