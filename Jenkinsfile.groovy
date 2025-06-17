@@ -18,7 +18,7 @@
 }*/
 pipeline {
     agent {
-        label 'ec2_instance'
+        label 'linux_agents'
     }
     environment {
         ECR_REGISTRY = '340752809566.dkr.ecr.us-east-1.amazonaws.com'
